@@ -1,0 +1,84 @@
+/* Color feedback shared by all landing-page controls. */
+.yellow-home {
+  --color-motion: .32s cubic-bezier(.4, 0, .2, 1);
+}
+.yellow-home button,
+.yellow-home .home-button,
+.yellow-home .home-text-link,
+.yellow-home .home-service-nav a,
+.yellow-home #contact button {
+  transition: background-color var(--color-motion), color var(--color-motion),
+    border-color var(--color-motion), box-shadow var(--color-motion),
+    translate .3s var(--motion-ease), scale .2s ease;
+}
+.yellow-home .journey-card,
+.yellow-home .home-icon-advantages article {
+  transition: background-color var(--color-motion), border-color var(--color-motion),
+    box-shadow var(--color-motion), translate .35s var(--motion-ease);
+}
+.yellow-home .home-icon-advantages article { border-radius: 16px; }
+.yellow-home .home-icon-advantages .advantage-icon-copy { padding-inline: 12px; }
+.yellow-home .home-icon-advantages .advantage-icon-stage { margin-left: 12px; }
+.yellow-home .property-showcase .showcase-card {
+  transition: transform .5s var(--motion-ease), opacity .4s ease,
+    background-color var(--color-motion), border-color var(--color-motion);
+}
+.yellow-home .journey-copy p,
+.yellow-home .journey-number,
+.yellow-home .journey-icon,
+.yellow-home .advantage-icon-disc,
+.yellow-home .home-motion-toggle > span {
+  transition: background-color var(--color-motion), color var(--color-motion);
+}
+@media (hover: hover) and (pointer: fine) {
+  .yellow-home .home-button:hover,
+  .yellow-home .hero-address-bar button:hover,
+  .yellow-home #contact button[type=submit]:hover {
+    background: #111827;
+    color: #fff;
+  }
+  .yellow-home .property-gallery-arrow:hover,
+  .yellow-home .showcase-navigation > button:hover,
+  .yellow-home .home-motion-toggle:hover {
+    background: #ffd700;
+    border-color: #ddbd00;
+    color: #111827;
+  }
+  .yellow-home .home-motion-toggle[aria-pressed=true]:hover {
+    background: #111827;
+    color: #fff;
+    border-color: #111827;
+  }
+  .yellow-home .home-motion-toggle:hover > span { color: inherit; }
+  .yellow-home .home-service-nav a:hover { background: #fff4ad; }
+  .yellow-home .home-text-link:hover { color: #766100; border-color: #baa000; }
+  .yellow-home .home-insurance .home-text-link:hover { color: #ffd700; border-color: #ffd700; }
+  .yellow-home .property-showcase .home-text-link:hover {
+    background: #111827; color: #fff; border-color: #111827;
+  }
+  .yellow-home .journey-card:hover {
+    background: #ffd700;
+    border-color: #dfbd00;
+    translate: 0 -3px;
+  }
+  .yellow-home .journey-card:hover .journey-icon { background: #111827; color: #ffd700; }
+  .yellow-home .journey-card:hover .journey-copy p,
+  .yellow-home .journey-card:hover .journey-number { color: #343526; }
+  .yellow-home .home-icon-advantages article:hover,
+  .yellow-home .property-showcase .showcase-center:hover { background: #fff7cd; }
+  .yellow-home .home-icon-advantages article:hover .advantage-icon-disc { background: #ffd700; }
+  .yellow-home .home-question-list summary:hover > span { background: #ffd700; color: #111827; }
+}
+.yellow-home .home-question-list summary > span {
+  transition: background-color var(--color-motion), color var(--color-motion), transform .25s ease;
+}
+/* The header lives outside Home; honor the explicit page motion preference. */
+body:has(.yellow-home[data-motion=full]) header a,
+body:has(.yellow-home[data-motion=full]) header button {
+  transition: background-color .32s ease, color .32s ease, border-color .32s ease,
+    box-shadow .32s ease, transform .25s ease !important;
+}
+.yellow-home[data-motion=reduced] *,
+.yellow-home[data-motion=reduced] *::before,
+.yellow-home[data-motion=reduced] *::after { transition: none !important; }
+.yellow-home[data-motion=reduced] .journey-card:hover { translate: none; }

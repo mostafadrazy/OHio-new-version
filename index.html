@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-x-hidden w-full">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Essa Estates | Rebuilding Homes With Greater Possibilities</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0yKY7mQCNCEEDvz6I8A3x9Dp10FMwPeg&libraries=places"
+    async defer></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            essa: {
+              bg: '#F4F3EF',        // Warm Off-White
+              bgAlt: '#EAE8E3',     // Slightly darker warm white
+              card: '#FFFFFF',      // White Card
+              cardHover: '#F9FAFB', // Light Grey Hover
+              yellow: '#FFD700',    // Vibrant Yellow
+              yellowHover: '#E6C200',
+              grey: '#4B5563',      // Dark Grey text
+              white: '#FFFFFF',
+              black: '#000000',
+            }
+          },
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+          },
+          boxShadow: {
+            'soft': '0 20px 40px -10px rgba(0, 0, 0, 0.1)',
+            'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+            'yellow': '0 10px 30px -5px rgba(255, 215, 0, 0.3)',
+            'glow': '0 0 20px rgba(255, 215, 0, 0.2)',
+            'glass': '0 8px 32px 0 rgba(255, 255, 255, 0.5)',
+          },
+          animation: {
+            'bounce-slow': 'bounce 3s infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'spin-slow': 'spin 12s linear infinite',
+            'fade-in-up': 'fadeInUp 1s ease-out forwards',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    ::selection {
+      background-color: #FFD700;
+      color: #000000;
+    }
+
+    /* Google Maps Autocomplete Custom Light Theme */
+    .pac-container {
+      background-color: #FFFFFF;
+      border: 1px solid #f3f4f6;
+      font-family: 'Outfit', sans-serif;
+      border-radius: 1rem;
+      box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.15);
+      margin-top: 12px;
+      padding: 8px;
+      z-index: 9999 !important;
+    }
+
+    .pac-item {
+      border-top: none;
+      border-radius: 0.75rem;
+      color: #6b7280;
+      padding: 12px 16px;
+      cursor: pointer;
+      line-height: 1.5;
+      transition: all 0.2s ease;
+      margin-bottom: 2px;
+    }
+
+    .pac-item:hover,
+    .pac-item-selected {
+      background-color: #FFD700;
+      color: #000000;
+    }
+
+    .pac-item:hover .pac-item-query,
+    .pac-item-selected .pac-item-query {
+      color: #000000;
+    }
+
+    .pac-item-query {
+      color: #111827;
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding-right: 4px;
+    }
+
+    .pac-icon {
+      margin-right: 12px;
+      margin-top: 2px;
+      opacity: 0.6;
+    }
+
+    .pac-container::after {
+      padding: 8px 16px;
+      border-radius: 0 0 1rem 1rem;
+    }
+
+    /* Hide default clear button in search inputs */
+    input[type="search"]::-webkit-search-decoration,
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-results-button,
+    input[type="search"]::-webkit-search-results-decoration {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 antialiased overflow-x-hidden w-full">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
